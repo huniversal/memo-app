@@ -1,20 +1,19 @@
 .App {
-  /* background-color: rgba(255, 255, 255, 0.31); */
-  background-color: yellow;
+  background-color: rgba(255, 255, 255, 0.31);
   max-width: 1250px; 
   width: 90%;
-  height: auto; /* 내부 콘텐츠에 따라 자동 높이 */
-  min-height: 90vh; /* 최소 높이 90% 화면 */
-  display: flex; /* 플렉스 컨테이너 */
-  flex-direction: column; /* 상하 정렬 */
-  overflow: hidden; /* 넘치는 요소 숨김 */
-  position: relative; /* 자식 요소 위치 조정 가능 */
-  border-radius: 14px; /* 둥근 모서리 */
-  backdrop-filter: blur(20px); /* 블러 효과 */
-  -webkit-backdrop-filter: blur(20px); /* 웹킷 블러 효과 */
-  font-size: 15px; /* 폰트 크기 */
-  font-weight: 500; /* 폰트 굵기 */
-  margin: auto; /* 화면 중앙 배치 */
+  height: auto;                         /* 내부 콘텐츠에 따라 자동 높이 */
+  min-height: 90vh;                     /* 최소 높이 90% 화면 */
+  display: flex;                        /* 플렉스 컨테이너 */
+  flex-direction: column;               /* 상하 정렬 */
+  overflow: hidden;                     /* 넘치는 요소 숨김 */
+  position: relative;                   /* 자식 요소 위치 조정 가능 */
+  border-radius: 14px;                  /* 둥근 모서리 */
+  backdrop-filter: blur(20px);          /* 블러 효과 */
+  -webkit-backdrop-filter: blur(20px);  /* 웹킷 블러 효과 */
+  font-size: 15px;                      /* 폰트 크기 */
+  font-weight: 500;                     /* 폰트 굵기 */
+  margin: auto;                         /* 화면 중앙 배치 */
   padding-top: 50px;
 }
 
@@ -26,13 +25,13 @@
 
 .main {
   flex: 3; /* 메인 콘텐츠 비율 */
-  background-color: white;
+  background-color: rgb(255 255 255 / 50%);
   padding: 20px;
 
 }
 
 .side-bar {
   flex: 1; 
-  background-color: lightgray;
-  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.31);
+  padding: 20px;
 }
