@@ -3,11 +3,11 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // 컴포넌트 import
-import Header   from './components/Header';
-import Sidebar  from './components/Sidebar';
-import MemoPage from './components/MemoPage';
-import TodoPage from './components/TodoPage';
-import MyPage   from './components/MyPage';
+import Header   from './components/Layout/Header';
+import Sidebar  from './components/Layout/Sidebar';
+import MemoPage from './components/Memo/MemoPage';
+import TodoPage from './components/Todo/TodoPage';
+import MyPage   from './components/My/MyPage';
 
 function App() {
   const [count, setCount] = useState(0);

@@ -1,7 +1,7 @@
 .App {
   background-color: rgba(255, 255, 255, 0.31);
-  max-width: 1250px; 
-  width: 90%;
+  max-width: 1150px; 
+  width: 75%;
   height: auto;                         /* 내부 콘텐츠에 따라 자동 높이 */
   min-height: 90vh;                     /* 최소 높이 90% 화면 */
   display: flex;                        /* 플렉스 컨테이너 */
@@ -27,6 +27,5 @@
   flex: 3; /* 메인 콘텐츠 비율 */
   background-color: rgb(255 255 255 / 50%);
   padding: 20px;
-
 }
 

@@ -13,7 +13,8 @@ html, body, #root {
 }
 
 body {
-  background-color: lightslategray;
+  background-image: url('./components/images/background-img.png');
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   display: flex;
