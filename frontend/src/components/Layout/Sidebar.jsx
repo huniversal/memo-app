@@ -3,8 +3,12 @@ import '../Style/sidebar.css';
 
 const Sidebar = () => {
   return (
-    <div>
-      <h3>List</h3>
+    <div className='List'>
+      <input
+        value={search}
+        onChange={onChangeSearch}
+        placeholder="검색어를 입력해주세요"
+      />
     </div>
   )
 }
