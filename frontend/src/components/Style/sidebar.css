@@ -1,0 +1,12 @@
+.side-bar {
+  flex: 1; 
+  background-color: rgba(255, 255, 255, 0.31);
+  flex-basis: 100px;
+  border-right: 1px solid white;
+  padding : 26px;
+  overflow: auto;
+  flex-shrink: 0;
+  @media screen and (max-width: 945px) {
+    display: none;
+  }
+}
