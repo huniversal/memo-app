@@ -1,52 +1,62 @@
 import { useState, useRef } from "react";
 import "../Style/Editor.css";
 
-const Editor = () => {
+const Editor = ({ onSave }) => {
   const [title, setTitle] = useState("");     // 제목 상태
   const [content, setContent] = useState(""); // 본문 상태
 
   const titleRef = useRef();    // 제목 입력창 참조
   const contentRef = useRef();  // 본문 입력창 참조
 
+  // 제목 상태 업데이트
   const onChangeTitle = (e) => {
-    setTitle(e.target.value); // 제목 상태 업데이트
-  }
-  
-  const onChangeContent = (e) => {
-    setContent(e.target.value); // 본문 상태 업데이트
-  }
+    setTitle(e.target.value);
+  };
 
+  // 본문 상태 업데이트
+  const onChangeContent = (e) => {
+    setContent(e.target.value);
+  };
+
+  // 저장 버튼 클릭 시 호출
   const onSubmit = () => {
-    if (title === "") {
+    if (title.trim() === "") {
+      alert("제목을 입력해주세요.");
       titleRef.current.focus();
       return;
     }
-    if (content === "") {
+    if (content.trim() === "") {
+      alert("본문을 입력해주세요.");
       contentRef.current.focus();
       return;
     }
-    console.log("제목:", title, "본문:", content); // 상태 출력
+
+    // 저장 콜백 실행 (상위 컴포넌트로 데이터 전달)
+    onSave(title, content);
+
+    // 입력 초기화
+    setTitle("");
+    setContent("");
   };
 
   return (
     <div className="Memo-Editor">
-      <input 
+      <input
         ref={titleRef}
         type="text"
-        placeholder='제목을 입력해주세요'
+        placeholder="제목을 입력해주세요"
         value={title}
         onChange={onChangeTitle}
-        />
-      <textarea 
+      />
+      <textarea
         ref={contentRef}
-        placeholder='본문을 입력해주세요'
+        placeholder="본문을 입력해주세요"
         value={content}
         onChange={onChangeContent}
-        ></textarea>
-      <button
-        onClick={onSubmit}>확인</button>
+      ></textarea>
+      <button onClick={onSubmit}>저장</button>
     </div>
-  )
-}
+  );
+};
 
 export default Editor;

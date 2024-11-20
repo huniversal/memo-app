@@ -4,11 +4,14 @@
   justify-content: center; /* 수직 방향으로 중앙 정렬 */
   align-items: center; /* 가로 방향으로 중앙 정렬 */
   gap: 10px; /* 요소 간 간격 */
+  min-height: 80vh;
+  padding: 20px;
+  box-sizing: border-box
 }
 
 .Memo-Editor > input,
 .Memo-Editor > textarea {
-  width: 80%; /* 너비 조정 */
+  width: 90%; /* 너비 조정 */
   max-width: 600px; /* 최대 너비 제한 */
   border: none;
   border-radius: 8px;
@@ -23,7 +26,7 @@
 }
 
 .Memo-Editor > textarea {
-  height: 350px; /* 텍스트에어 높이 */
+  height: 100%; /* 텍스트에어 높이 */
   resize: none; /* 크기 조정 비활성화 */
   font-size: 13px; /* 텍스트 크기 조정 */
 }
