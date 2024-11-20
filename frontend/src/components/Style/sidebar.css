@@ -1,4 +1,4 @@
-.side-bar {
+.Sidebar {
   flex: 1; 
   background-color: rgba(255, 255, 255, 0.31);
   flex-basis: 50px;
@@ -7,6 +7,12 @@
   overflow: auto;
   flex-shrink: 0;
   @media screen and (max-width: 945px) {
-    display: none;
+    display: none; !important
   }
+}
+
+.memo-item {
+  border-bottom: 1.8px solid lightgray;
+  margin-bottom: 10px;
+  font-size: 14px;
 }

@@ -5,7 +5,7 @@ import ListItem from "./ListItem";
 const Sidebar = ({ memos = [] }) => {
   return (
     <div className="Sidebar">
-      <h2>메모 리스트</h2>
+      <h3>메모 리스트</h3>
       {memos.length > 0 ? (
         memos.map((memo) => (
           <div key={memo.id} className="memo-item">
