@@ -1,20 +1,12 @@
 import React from 'react'
 import '../Style/sidebar.css';
-import ListItem from "./ListItem";
+import List from './List'
 
-const Sidebar = ({ memos = [] }) => {
+
+const Sidebar = ({ memos, onDelete }) => {
   return (
     <div className="Sidebar">
-      <h3>메모 리스트</h3>
-      {memos.length > 0 ? (
-        memos.map((memo) => (
-          <div key={memo.id} className="memo-item">
-            {memo.title}
-          </div>
-        ))
-      ) : (
-        <p>저장된 메모가 없습니다.</p>
-      )}
+      <List memos={memos} onDelete={onDelete}/>
     </div>
   );
 };

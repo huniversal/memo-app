@@ -1,12 +1,13 @@
 import "../Style/listitem.css";
+
 const ListItem = ({ 
   id, 
   title, 
   onDelete 
   }) => {
-  const handleDelete = () => {
-    onDelete(id); // 삭제 함수 호출
-  };
+    const handleDelete = () => {
+      onDelete(id); // 삭제 함수 호출
+    };
 
   return (
     <div className="ListItem">

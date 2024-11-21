@@ -1,17 +1,17 @@
-import { useState, useRef } from "react";
 import "../Style/Editor.css";
+import { useState, useRef } from "react";
 
 const Editor = ({ onSave }) => {
   const [title, setTitle] = useState("");     // 제목 상태
-  const [content, setContent] = useState(""); // 본문 상태
-
   const titleRef = useRef();    // 제목 입력창 참조
-  const contentRef = useRef();  // 본문 입력창 참조
 
   // 제목 상태 업데이트
   const onChangeTitle = (e) => {
     setTitle(e.target.value);
   };
+
+  const [content, setContent] = useState(""); // 본문 상태
+  const contentRef = useRef();  // 본문 입력창 참조
 
   // 본문 상태 업데이트
   const onChangeContent = (e) => {
@@ -54,7 +54,8 @@ const Editor = ({ onSave }) => {
         value={content}
         onChange={onChangeContent}
       ></textarea>
-      <button onClick={onSubmit}>저장</button>
+      <button className="del-button" >삭제</button>
+      <button  className="save-button" onClick={onSubmit}>저장</button>
     </div>
   );
 };

@@ -5,7 +5,7 @@
   align-items: center; /* 가로 방향으로 중앙 정렬 */
   gap: 10px; /* 요소 간 간격 */
   min-height: 80vh;
-  padding: 20px;
+  padding: 20px 20px 0;
   box-sizing: border-box
 }
 
@@ -16,13 +16,13 @@
   border: none;
   border-radius: 8px;
   padding: 10px;
+  margin-top: 0;
 }
 
 .Memo-Editor > input {
   height: 40px; /* 인풋 높이 */
   border-bottom: 2px solid #ccc; /* 밑줄 */
   font-size: 18px; /* 텍스트 크기 조정 */
-  margin-top: 30px;
 }
 
 .Memo-Editor > textarea {
@@ -31,7 +31,7 @@
   font-size: 13px; /* 텍스트 크기 조정 */
 }
 
-.Memo-Editor > button {
+.save-button, .del-button {
   width: 80%;
   max-width: 80px; /* 버튼의 최대 너비 제한 */
   height: 40px;
@@ -42,9 +42,10 @@
   font-size: 16px;
   cursor: pointer;
   margin-left: 370px;
+  align-self: flex-end;
 }
 
-.Memo-Editor > button:hover {
+.save-button:hover {
   background-color: #0056b3; /* 버튼 hover 효과 */
 }
 
@@ -60,7 +61,7 @@
     max-width: none; /* 최대 너비 제한 해제 */
   }
 
-  .Memo-Editor > button {
+  .save-button {
     width: 100%; /* 버튼도 화면 너비에 맞게 조정 */
   }
 }
