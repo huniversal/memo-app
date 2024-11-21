@@ -15,6 +15,10 @@
   font-weight: 500;                     /* 폰트 굵기 */
   margin: auto;                         /* 화면 중앙 배치 */
   padding-top: 50px;
+  @media screen and (max-width:700px) {
+    width:80%;
+    margin : 0 auto;
+  }
 }
 
 .content {

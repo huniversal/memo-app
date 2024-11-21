@@ -54,7 +54,6 @@ const Editor = ({ onSave }) => {
         value={content}
         onChange={onChangeContent}
       ></textarea>
-      <button className="del-button" >삭제</button>
       <button  className="save-button" onClick={onSubmit}>저장</button>
     </div>
   );

@@ -12,7 +12,7 @@ const ListItem = ({
   return (
     <div className="ListItem">
       <div className="title">{title}</div>
-      <button onClick={handleDelete}>삭제</button>
+      <button onClick={handleDelete}>X</button>
     </div>
   );
 };

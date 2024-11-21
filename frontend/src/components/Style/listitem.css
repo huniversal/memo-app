@@ -31,8 +31,13 @@
 .ListItem button {
   cursor: pointer;
   color: gray;
-  font-size: 10px;
+  font-size: 17px;
   border: none;
-  border-radius: 5px;
   padding: 5px;
+  background: none;
+  font-weight: 500;
+}
+
+.ListItem button:hover {
+  color: navy;
 }

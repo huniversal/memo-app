@@ -1,22 +1,22 @@
 .Memo-Editor {
   display: flex;
   flex-direction: column; /* 수직 정렬 */
-  justify-content: center; /* 수직 방향으로 중앙 정렬 */
   align-items: center; /* 가로 방향으로 중앙 정렬 */
   gap: 10px; /* 요소 간 간격 */
   min-height: 80vh;
   padding: 20px 20px 0;
-  box-sizing: border-box
+  box-sizing: border-box;
+
+  margin-top : 30px;
 }
 
 .Memo-Editor > input,
 .Memo-Editor > textarea {
-  width: 90%; /* 너비 조정 */
-  max-width: 600px; /* 최대 너비 제한 */
+  width: 100%; /* 너비 조정 */
   border: none;
   border-radius: 8px;
   padding: 10px;
-  margin-top: 0;
+  margin-top: 0px;
 }
 
 .Memo-Editor > input {
@@ -26,24 +26,25 @@
 }
 
 .Memo-Editor > textarea {
-  height: 100%; /* 텍스트에어 높이 */
+  height: 400px; /* 텍스트에어 높이 */
   resize: none; /* 크기 조정 비활성화 */
   font-size: 13px; /* 텍스트 크기 조정 */
+  overflow-y: auto;
 }
 
-.save-button, .del-button {
-  width: 80%;
-  max-width: 80px; /* 버튼의 최대 너비 제한 */
+.Memo-Editor > button {
+  width: 80px; /* 버튼 너비 유지 */
+  align-self: flex-end; /* 부모 요소에서 오른쪽 정렬 */
   height: 40px;
-  border: none;
-  border-radius: 8px;
   background-color: #007bff;
   color: white;
   font-size: 16px;
   cursor: pointer;
-  margin-left: 370px;
-  align-self: flex-end;
+  margin-top: 10px; /* 버튼 간 간격 */
+  border-radius: 10px;
+  border: none;
 }
+
 
 .save-button:hover {
   background-color: #0056b3; /* 버튼 hover 효과 */
