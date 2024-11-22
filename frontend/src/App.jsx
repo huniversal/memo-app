@@ -6,6 +6,7 @@ import './App.css';
 import Header   from './components/Layout/Header';
 import Sidebar  from './components/Layout/Sidebar';
 import MemoPage from './components/Memo/MemoPage';
+import MemoDetail from './components/Memo/MemoDetail';
 import TodoPage from './components/Todo/TodoPage';
 import MyPage   from './components/My/MyPage';
 import NotFound from './components/NotFound';
@@ -43,6 +44,7 @@ function App() {
       content : content,
     };
     setMemos([newMemo, ...memos]);
+    return newMemo.id;
   }
 
   const onDelete = (targetId) => {
@@ -62,6 +64,10 @@ function App() {
             <Routes>
               <Route path="/"       element={<MemoPage 
                                               memos={memos} 
+                                              onSave={onSave} />} />
+              <Route path="/memo/:id" element={<MemoDetail 
+                                              memos={memos} 
+                                              onDelete={onDelete} 
                                               onSave={onSave} />} />
               <Route path="/todo"   element={<TodoPage />} />
               <Route path="/mypage" element={<MyPage />} />
