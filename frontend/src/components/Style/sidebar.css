@@ -7,6 +7,8 @@
   overflow: auto;
   flex-shrink: 0;
   height: auto; 
+  /* display: flex; */
+  flex-shrink: 0;
   @media screen and (max-width: 945px) {
     display: none; !important
   }

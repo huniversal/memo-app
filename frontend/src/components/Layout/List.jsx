@@ -1,10 +1,11 @@
 import React from 'react';
 import ListItem from './ListItem';
+import "../Style/List.css";
 
 const List = ({ memos=[], onDelete }) => {
   return (
     <div className='List'>
-      <h3>메모 리스트</h3>
+      <h2>메모 리스트</h2>
       <div className='memo-wrapper'>
         {memos.map((memo) => (
           <ListItem 

@@ -1,3 +1,8 @@
 .memo-wrapper {
   overflow: auto;
+  margin-top: -20px;
+}
+
+.List > h2 {
+  margin-left: 10px;
 }
