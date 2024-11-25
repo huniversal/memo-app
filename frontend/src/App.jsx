@@ -32,52 +32,66 @@ const mockData = [
   }
 ];
 
-function App() {
+const App = () => {
   const [memos, setMemos] = useState(mockData);
   const idRef = useRef(mockData.length);
 
-  const onSave = (title, content) => {
-    const newMemo = {
-      id : idRef.current++,
-      isDone : false,
-      title : title,
-      content : content,
-    };
-    setMemos([newMemo, ...memos]);
-    return newMemo.id;
-  }
+  const onSave = (id, title, content) => {
+    if (id !== undefined && id !== null) {
+      setMemos((prevMemos) =>
+        prevMemos.map((memo) =>
+          memo.id === id ? { ...memo, title, content } : memo
+        )
+      );
+    } else {
+      const newMemo = {
+        id: idRef.current++,
+        isDone: false,
+        title,
+        content,
+      };
+      setMemos((prevMemos) => [newMemo, ...prevMemos]);
+      console.log("New Memo Added:", newMemo); // 디버깅용 로그
+      return newMemo.id; // 새로 생성된 메모 ID 반환
+    }
+  };
 
-  const onDelete = (targetId) => {
-    setMemos(memos.filter((memo) => memo.id !== targetId));
+  const onDelete = (id) => {
+    setMemos((prevMemos) => prevMemos.filter((memo) => memo.id !== id));
   };
 
   return (
     <Router>
-      <div className="App"> {/* Body위 컨텐츠 박스 */}
-        <Header /> {/* 상단 Nav */}
+      <div className="App">
+        <Header />
         <div className="content">
-          <Sidebar 
-            memos={memos}
-            onDelete={onDelete}
-            /> {/* 동적 Sidebar */}
-          <main className="main">{/* MainPage : 라우팅으로 페이지 전환 */}
+          <Sidebar memos={memos} onDelete={onDelete} />
+          <main className="main">
             <Routes>
-              <Route path="/"       element={<MemoPage 
-                                              memos={memos} 
-                                              onSave={onSave} />} />
-              <Route path="/memo/:id" element={<MemoDetail 
-                                              memos={memos} 
-                                              onDelete={onDelete} 
-                                              onSave={onSave} />} />
-              <Route path="/todo"   element={<TodoPage />} />
+              <Route
+                path="/"
+                element={<MemoPage memos={memos} onSave={onSave} />}
+              />
+              <Route
+                path="/memo/:id"
+                element={
+                  <MemoDetail
+                    memos={memos}
+                    onDelete={onDelete}
+                    onSave={onSave}
+                  />
+                }
+              />
+              <Route path="/todo" element={<TodoPage />} />
               <Route path="/mypage" element={<MyPage />} />
-              <Route path="*"       element={<NotFound />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
         </div>
       </div>
     </Router>
   );
-}
+};
+
 
 export default App;

@@ -1,0 +1,67 @@
+.MemoDetail {
+  display: flex;
+  flex-direction: column; /* 수직 정렬 */
+  align-items: center; /* 가로 방향으로 중앙 정렬 */
+  gap: 10px; /* 요소 간 간격 */
+  min-height: 80vh;
+  padding: 20px 20px 0;
+  box-sizing: border-box;
+
+  margin-top : 30px;
+}
+
+.MemoDetail > input,
+.MemoDetail > textarea {
+  width: 100%; /* 너비 조정 */
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 0px;
+}
+
+.MemoDetail > input {
+  height: 40px; /* 인풋 높이 */
+  border-bottom: 2px solid #ccc; /* 밑줄 */
+  font-size: 18px; /* 텍스트 크기 조정 */
+}
+
+.MemoDetail > textarea {
+  height: 400px; /* 텍스트에어 높이 */
+  resize: none; /* 크기 조정 비활성화 */
+  font-size: 13px; /* 텍스트 크기 조정 */
+  overflow-y: auto;
+}
+
+.MemoDetail > button {
+  width: 80px; /* 버튼 너비 유지 */
+  align-self: flex-end; /* 부모 요소에서 오른쪽 정렬 */
+  height: 40px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px; /* 버튼 간 간격 */
+  border-radius: 10px;
+  border: none;
+}
+
+.button:hover {
+  background-color: #0056b3; /* 버튼 hover 효과 */
+}
+
+@media screen and (max-width: 945px) {
+  .MemoDetail {
+    padding: 20px; /* 내부 여백 추가 */
+    gap: 15px; /* 간격 조정 */
+  }
+
+  .MemoDetail > input,
+  .MemoDetail > textarea {
+    width: 100%; /* 너비를 화면에 맞게 확장 */
+    max-width: none; /* 최대 너비 제한 해제 */
+  }
+
+  .button {
+    width: 100%; /* 버튼도 화면 너비에 맞게 조정 */
+  }
+}

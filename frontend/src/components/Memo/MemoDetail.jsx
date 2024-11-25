@@ -1,3 +1,4 @@
+import "../Style/memodetail.css";
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
@@ -21,12 +22,8 @@ const MemoDetail = ({ memos, onDelete, onSave }) => {
 
   // 저장 처리
   const handleSave = () => {
-    onSave({
-      ...memo,
-      title,
-      content,
-    });
-    setIsEditing(false); // 수정 모드 종료
+    onSave(memo.id, title, content); 
+    setIsEditing(false); // 수정 모드 종료 
   };
 
   // 메모가 없을 때 처리

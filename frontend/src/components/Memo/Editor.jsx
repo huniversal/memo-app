@@ -22,10 +22,11 @@ const Editor = ({ onSave }) => {
       return;
     }
 
-    const newMemoId = onSave(title, content); // 저장하고 새 메모 ID 받기
-    setTitle("");
-    setContent("");
-    navigate(`/memo/${newMemoId}`); // 해당 메모 디테일 페이지로 이동
+    const newMemoId = onSave(null, title, content); // 저장하고 새 메모 ID 받기
+    if (newMemoId !== undefined) {
+      console.log("Navigating to memo ID:", newMemoId); // 디버깅용 로그
+      navigate(`/memo/${newMemoId}`); // 디테일 페이지로 이동
+    }
   };
 
 
