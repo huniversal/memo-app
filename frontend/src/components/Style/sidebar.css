@@ -6,6 +6,7 @@
   padding : 26px;
   overflow: auto;
   flex-shrink: 0;
+  height: auto; 
   @media screen and (max-width: 945px) {
     display: none; !important
   }
