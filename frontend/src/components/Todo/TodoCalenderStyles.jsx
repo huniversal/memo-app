@@ -37,7 +37,8 @@ export const CalendarBody = styled.div`
     border: 1px solid #ddd;
   }
   .selected {
-    background-color: yellow;
+    color : blue;
+    font-weight : bold;
   }
   .grayed {
     color: gray;

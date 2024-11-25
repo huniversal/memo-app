@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import moment from 'moment';
-import { Wrapper, CalendarHead, CalendarBody } from './TodoCalenderStyles';
+import '../Style/TodoCalender.css';
 
 function Calendar() {
   const [date, setDate] = useState(() => moment());
@@ -44,10 +44,10 @@ function Calendar() {
   }
 
   return (
-    <Wrapper>
-      <CalendarHead>
+    <div className="wrapper">
+      <div className="calendar-head">
         <div className="head">
-          <span className="title">{date.format('MMMM YYYY')}</span>
+          <span className="title">{date.format('YYYY년 MM월')}</span>
           <div className="util-button">
             <button onClick={() => jumpToMonth(0)}>
               <i className="fas fa-angle-left"></i>
@@ -58,18 +58,18 @@ function Calendar() {
             </button>
           </div>
         </div>
-      </CalendarHead>
-      <CalendarBody>
+      </div>
+      <div className="calendar-body">
         <div className="row">
-          {['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'].map((el) => (
+          {['일', '월', '화', '수', '목', '금', '토'].map((el) => (
             <div className="box" key={el}>
               <span className="text">{el}</span>
             </div>
           ))}
         </div>
         {generate()}
-      </CalendarBody>
-    </Wrapper>
+      </div>
+    </div>
   );
 }
 

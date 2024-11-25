@@ -13,12 +13,7 @@ import MyPage   from './components/My/MyPage';
 import NotFound from './components/NotFound';
 
 const mockData = [
-  {
-    id : 0, 
-    isDone : false, 
-    title : "안녕하세요1",  
-    content : "안녕",  
-  },
+  { id : 0, isDone : false, title : "안녕하세요1", content : "안녕", },
   {
     id : 1, 
     isDone : false, 
