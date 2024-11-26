@@ -1,5 +1,5 @@
 .calendar-container {
-  height: calc(100vh - 120px); /* 전체 화면에서 헤더 등을 뺀 높이 설정 */
+  height: calc(100vh - 120px); 
   padding: 20px;
   border-radius: 8px;
   overflow: hidden; /* 내용 잘림 방지 */
