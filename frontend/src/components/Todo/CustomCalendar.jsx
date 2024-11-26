@@ -25,7 +25,7 @@ const CustomCalendar = () => {
         localizer={localizer}
         startAccessor="start"
         endAccessor="end"
-        style={{height:'90%', width: "90%"}}
+        style={{height:'70vh', width: "90%"}}
       />
     </div>
   )

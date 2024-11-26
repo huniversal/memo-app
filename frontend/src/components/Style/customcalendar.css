@@ -3,6 +3,10 @@
   padding: 20px;
   border-radius: 8px;
   overflow: hidden; /* 내용 잘림 방지 */
+  display: flex;
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+  position: relative;
 }
 
 @media screen and (max-width: 945px) {
@@ -22,9 +26,13 @@
   border: none;
   padding: 10px;
   cursor : pointer;
-  color : red;
+  color : white;
+  border-radius: 10px;
 }
 
 .btn-container {
   margin-bottom: 10px;
+  position: absolute;
+  top: 40px; /* 위쪽 여백 */
+  left: 70px; /* 왼쪽 여백 */
 }

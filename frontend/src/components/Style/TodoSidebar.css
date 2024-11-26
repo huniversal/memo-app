@@ -4,7 +4,7 @@
   left : -250px;
   width : 250px;
   height : 100%;
-  background-color: #f0f0f0;
+  background-color: rgba(255, 255, 255, 0.85);
   transition: left 0.3s ease;
   z-index : 1000;
 }
@@ -26,9 +26,11 @@
 }
 
 .close-btn {
-  background-color: red;
+  background-color: rgb(53, 142, 221);;
   border: none;
   cursor: pointer;
   color : white;
   border-radius: 10px;
+  width: 40px;
+  height: 25px;
 }
