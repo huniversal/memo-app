@@ -9,7 +9,7 @@
   z-index : 1000;
 }
 
-.Todo-sidebar .show {
+.Todo-sidebar.show {
   left : 0;
 }
 

@@ -11,6 +11,7 @@ const CustomCalendar = () => {
 
   const toggleOffanvas = () => {
     setShowOffcanvas(!showOffcanvas);
+    console.log("Sidebar visibility:", !showOffcanvas);
   }
   return (
     <div className='calendar-container'>
