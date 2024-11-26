@@ -1,5 +1,9 @@
 import React, { useState, useRef } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation} from 'react-router-dom';
+import { 
+  BrowserRouter as Router, 
+  Routes, 
+  Route,
+} from 'react-router-dom';
 import './App.css';
 import moment from 'moment';
 
@@ -65,8 +69,8 @@ const mockData = [
 ];
 
 const App = () => {
-  const [memos, setMemos] = useState(mockData);
-  const idRef = useRef(mockData.length);
+  const [memos, setMemos] = useState(mockData); // 메모 데이터 상태
+  const idRef = useRef(mockData.length);        // 새 메모의 ID를 추적하는 ref
 
   const onSave = (id, title, content) => {
     if (id !== undefined && id !== null) {
@@ -91,7 +95,7 @@ const App = () => {
   const onDelete = (id) => {
     setMemos((prevMemos) => prevMemos.filter((memo) => memo.id !== id));
   };
-
+  
   return (
     <Router>
       <div className="App">
@@ -106,12 +110,7 @@ const App = () => {
               />
               <Route
                 path="/memo/:id"
-                element={
-                  <MemoDetail
-                    memos={memos}
-                    onDelete={onDelete}
-                    onSave={onSave}
-                  />
+                element={ <MemoDetail memos={memos} onDelete={onDelete} onSave={onSave} />
                 }
               />
               <Route path="/todo" element={<TodoPage />} />
