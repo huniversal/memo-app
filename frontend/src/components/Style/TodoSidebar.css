@@ -34,3 +34,34 @@
   width: 40px;
   height: 25px;
 }
+
+input[type='text'],
+input[type='date'],
+input[type='time'] {
+  width: 90%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+button {
+  margin-top: 15px;
+}
+
+.btn-primary {
+  background-color: green;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+.btn-danger{
+  background-color: red;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+  margin-left: 10px;
+}
