@@ -23,7 +23,7 @@ const TodoSidebar = ({show, onHide, onAddEvent, seletedEvent}) => {
       {console.log("Sidebar class:", show ? 'show' : '')}
       <div className='Todo-Sidebar-Content'>
         <div className='Todo-Sidebar-header'>
-          <h3>투두리스트 추가</h3>
+          <h3>일정 추가</h3>
           <button className="close-btn" onClick={onHide}>닫기</button>
         </div>
         <div className='sidebar-body'>

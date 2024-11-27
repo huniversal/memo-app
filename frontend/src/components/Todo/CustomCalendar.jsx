@@ -25,7 +25,7 @@ const CustomCalendar = () => {
     <div className='calendar-container'>
       <div className='btn-container'>
         <button className='btn-event' onClick={()=> {setSelectedEvent(null); toggleOffanvas();}}>
-          투두리스트 추가
+          일정 추가
         </button>
         <TodoSidebar 
           show={showOffcanvas} 
