@@ -1,20 +1,41 @@
 .custom-toolbar {
   display: flex;
-  flex-direction: column; /* 세로 정렬 */
-  gap: 10px; /* 상단과 하단 간격 */
-  padding: 20px 20px 10px;
+  justify-content: space-between; /* 좌우 정렬 */
+  align-items: center;
+  padding: 10px;
   border-radius: 8px;
+  margin-top: -20px;
 }
 
-/* 상단의 "월"과 "주" 버튼 */
+.custom-toolbar .event-button {
+  margin-left: auto; /* 오른쪽 정렬 */
+}
+
+.custom-toolbar-add-event-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.custom-toolbar-add-event-button:hover {
+  background-color: #0056b3;
+}
+
+/* 왼쪽 고정된 월/주 버튼 */
 .view-button {
   display: flex;
   justify-content: flex-start; /* 왼쪽 정렬 */
+  align-items: center;
   gap: 10px;
+  margin-right: 55px;
 }
 
+/* 월/주 버튼 스타일 */
 .custom-toolbar-view-button {
-  background-color: #ffc107;
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 20px;
@@ -28,27 +49,30 @@
   background-color: #ffbf00;
 }
 
-/* 하단 네비게이션 버튼과 라벨 */
+/* 가운데 정렬된 달 이동 버튼과 라벨 */
 .view-toolbar {
   display: flex;
   justify-content: center; /* 가운데 정렬 */
   align-items: center;
   gap: 20px; /* 버튼과 라벨 간 간격 */
+  flex: 1; /* 가운데 요소를 확장하여 양쪽 공간 확보 */
+  margin-right: 100px;
 }
 
+/* 달 이동 버튼 스타일 */
 .custom-toolbar-button {
-  color: white;
-  background-color: #007bff;
+  color: #007bff;
   border: none;
   border-radius: 50px;
   font-size: 20px;
   cursor: pointer;
-  margin-bottom: 20px;
   font-size: 18px;
 }
 
+/* 월 표시 라벨 스타일 */
 .custom-toolbar-label {
   font-size: 28px;
   font-weight: 700;
   color: #333;
+  margin-top: 15px;
 }

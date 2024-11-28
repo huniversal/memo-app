@@ -33,8 +33,8 @@
 .btn-container {
   margin-bottom: 10px;
   position: absolute;
-  top: 40px; /* 위쪽 여백 */
-  left: 70px; /* 왼쪽 여백 */
+  top: 20px; /* 위쪽 여백 */
+  right: 130px; /* 왼쪽 여백 */
 }
 
 /* 캘린더 전체 배경 */

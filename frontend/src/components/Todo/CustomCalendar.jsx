@@ -43,28 +43,25 @@ const CustomCalendar = () => {
 
   return (
     <div className="calendar-container">
-      <div className="btn-container">
-        <button
-          className="btn-event"
-          onClick={() => {
-            setSelectedEvent(null);
-            toggleOffcanvas();
-          }}
-        >
-          일정 추가
-        </button>
-        <TodoSidebar
-          show={showOffcanvas}
-          onHide={toggleOffcanvas}
-          onAddEvent={handleAddEvent}
-          selectedEvent={selectedEvent}
-        />
-      </div>
+      <TodoSidebar
+        show={showOffcanvas}
+        onHide={toggleOffcanvas}
+        onAddEvent={handleAddEvent}
+        selectedEvent={selectedEvent}
+      />
       <Calendar
         localizer={localizer}
         events={events}
         components={{
-          toolbar: TodoToolbar,
+          toolbar: (props) => (
+            <TodoToolbar
+              {...props}
+              onAddEvent={() => {
+                setSelectedEvent(null);
+                toggleOffcanvas();
+              }}
+            />
+          ),
         }}
         formats={{
           dayFormat: (date, culture, localizer) =>
@@ -72,7 +69,7 @@ const CustomCalendar = () => {
         }}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: "90%", width: "90%" }}
+        style={{ height: "90%", width: "90%", backgroundColor: "white" }}
         messages={{
           today: "오늘",
           previous: "이전",
