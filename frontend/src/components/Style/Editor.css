@@ -7,34 +7,35 @@
   min-height: 80vh;
   padding: 20px 20px 0;
   box-sizing: border-box;
-
-  margin-top : 30px;
+  margin-top : 0px;
 }
-/* 
+
 .Memo-Editor > input,
 .Memo-Editor > textarea {
-  border: none;
   border-radius: 8px;
-  padding: 10px;
-  margin-top: 0px;
+
   width: 100%;
   max-width: none;
-} */
+}
 
-.editor-input {
+.Memo-Editor > input {
   height: 40px; /* 인풋 높이 */
-  border-radius: 40px;
+  border-radius: 10px;
   font-size: 20px; /* 텍스트 크기 조정 */
   width: 100%;
+  margin-top: 0px;
+  background-color: white;
 }
 
 .Memo-Editor > textarea {
-  height: 400px; /* 텍스트에어 높이 */
+  height: 500px; /* 텍스트에어 높이 */
   resize: none; /* 크기 조정 비활성화 */
   font-size: 13px; /* 텍스트 크기 조정 */
   overflow-y: auto;
   width: 100%;
   border: none;
+  border-radius: 8px;
+  padding: 10px;
 }
 
 .Memo-Editor > button {

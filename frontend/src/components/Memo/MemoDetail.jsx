@@ -9,10 +9,10 @@ const MemoDetail = ({ memos, onDelete, onSave }) => {
   // 메모 찾기
   const memo = Array.isArray(memos) ? memos.find((memo) => memo.id === parseInt(id)) : null;
 
-  // 상태 관리
-  const [isEditing, setIsEditing] = useState(false); // 수정 모드 여부
-  const [title, setTitle] = useState(memo?.title || ""); // 제목 상태
-  const [content, setContent] = useState(memo?.content || ""); // 내용 상태
+  // 상태 관리  
+  const [isEditing, setIsEditing] = useState(false); // 수정 모드 여부 
+  const [title, setTitle] = useState(memo?.title || ""); // 제목 상태 
+  const [content, setContent] = useState(memo?.content || ""); // 내용 상태 
 
   // 삭제 처리
   const handleDelete = () => {
