@@ -45,6 +45,7 @@ input[type='time'] {
   border-radius: 4px;
   font-size: 14px;
   gap: 5px;
+  background-color: red;
 }
 
 button {

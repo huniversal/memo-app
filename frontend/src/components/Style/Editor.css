@@ -8,23 +8,27 @@
   padding: 20px 20px 0;
   box-sizing: border-box;
   margin-top : 0px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+/* 에디터 input, textarea */
 .Memo-Editor > input,
 .Memo-Editor > textarea {
   border-radius: 8px;
-
+  box-sizing: border-box;
   width: 100%;
   max-width: none;
 }
 
 .Memo-Editor > input {
   height: 40px; /* 인풋 높이 */
-  border-radius: 10px;
+  border-radius: 8px;
   font-size: 20px; /* 텍스트 크기 조정 */
   width: 100%;
   margin-top: 0px;
-  background-color: white;
+  /* background-color: red; */
+  border: black;
 }
 
 .Memo-Editor > textarea {
