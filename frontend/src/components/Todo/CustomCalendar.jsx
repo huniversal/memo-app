@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import moment from "moment";
+import 'moment/locale/ko';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import "../Style/customcalendar.css";
@@ -64,6 +65,10 @@ const CustomCalendar = () => {
         events={events}                       // 이벤트 리스트를 전달
         components ={{
           toolbar : TodoToolbar,
+        }}
+        formats={{
+          dayFormat: (date, culture, localizer) =>
+            localizer.format(date, 'eeee', culture), // 'eeee'는 요일 전체 이름 (예: 월요일)
         }}
         startAccessor="start"                 // 이벤트 시작 시간 필드 지정
         endAccessor="end"                     // 이벤트 종료 시간 필드 지정

@@ -30,11 +30,11 @@ const TodoToolbar = (toolbar) => {
       </div>
       <div className='view-toolbar'>
         <button onClick ={goToBack} className="custom-toolbar-button">
-          이전
+          &#5130;
         </button>
         <span className='custom-toolbar-label'>{toolbar.label}</span>
         <button onClick={goToNext} className="custom-toolbar-button">
-          다음
+          &#5125;
         </button>
       </div>
     </div>
