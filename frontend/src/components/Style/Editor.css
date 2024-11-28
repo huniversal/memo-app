@@ -1,7 +1,8 @@
 .Memo-Editor {
   display: flex;
   flex-direction: column; /* 수직 정렬 */
-  align-items: center; /* 가로 방향으로 중앙 정렬 */
+  /* align-items: center; */
+  align-items: stretch;
   gap: 10px; /* 요소 간 간격 */
   min-height: 80vh;
   padding: 20px 20px 0;
@@ -9,20 +10,22 @@
 
   margin-top : 30px;
 }
-
+/* 
 .Memo-Editor > input,
 .Memo-Editor > textarea {
-  width: 100%; /* 너비 조정 */
   border: none;
   border-radius: 8px;
   padding: 10px;
   margin-top: 0px;
-}
+  width: 100%;
+  max-width: none;
+} */
 
-.Memo-Editor > input {
+.editor-input {
   height: 40px; /* 인풋 높이 */
-  border-bottom: 2px solid #ccc; /* 밑줄 */
-  font-size: 18px; /* 텍스트 크기 조정 */
+  border-radius: 40px;
+  font-size: 20px; /* 텍스트 크기 조정 */
+  width: 100%;
 }
 
 .Memo-Editor > textarea {
@@ -30,6 +33,8 @@
   resize: none; /* 크기 조정 비활성화 */
   font-size: 13px; /* 텍스트 크기 조정 */
   overflow-y: auto;
+  width: 100%;
+  border: none;
 }
 
 .Memo-Editor > button {

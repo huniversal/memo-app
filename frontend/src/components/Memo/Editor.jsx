@@ -38,6 +38,7 @@ const Editor = ({ onSave }) => {
         placeholder="제목을 입력해주세요"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
+        className="editor-input"
       />
       <textarea
         ref={contentRef}
