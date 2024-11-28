@@ -33,6 +33,7 @@ const TodoSidebar = ({show, onHide, onAddEvent, seletedEvent}) => {
             placeholder='Event Title'
             value={title}
             onChange={(e) => setTitle(e.target.value)}
+            className="title-input"
           />
           <label>Date</label>
           <input 
@@ -40,6 +41,7 @@ const TodoSidebar = ({show, onHide, onAddEvent, seletedEvent}) => {
             placeholder='Event Title'
             value={date}
             onChange={(e) => setDate(e.target.value)}
+            className="date-input"
           />
           <label>Start Time</label>
           <input 
@@ -47,6 +49,7 @@ const TodoSidebar = ({show, onHide, onAddEvent, seletedEvent}) => {
             placeholder='Event Title'
             value={startTime}
             onChange={(e) => setStartTime(e.target.value)}
+            className="time-input"
           />
           <label>End Time</label>
           <input 

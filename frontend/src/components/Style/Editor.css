@@ -29,6 +29,7 @@
   margin-top: 0px;
   /* background-color: red; */
   border: black;
+  padding: 10px;
 }
 
 .Memo-Editor > textarea {
