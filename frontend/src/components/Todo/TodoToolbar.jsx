@@ -48,10 +48,6 @@ const TodoToolbar = ({ onNavigate, label, onView, onAddEvent }) => {
             ☰
         </button>
       </div>
-      <TodoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <h2>일정 추가하기</h2>
-        <p>여기에 일정을 표시하세요.</p>
-      </TodoModal>
     </div>
   );
 };

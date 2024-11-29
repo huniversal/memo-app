@@ -1,65 +1,51 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import "../Style/todomodal.css";
 
-const TodoModal = ({ isOpen, onClose, children }) => {
+const TodoModal = ({ isOpen, onClose, onAddEvent }) => {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
 
-  if (!isOpen) return null; // 모달이 열려 있지 않으면 아무것도 렌더링하지 않음
+  if (!isOpen) return null;
 
-  const handleAddEvent = () => {
-    if(title && date) {
-      onAddEvent ({
-        id : Math.random(),
-        title, 
-        start : new Date(`${date}T${time || "00:00"}`),
-        end : new Date(`${date}T${time || "00:30"}`)
-      });
-      setTitle("");
-      setDate("");
-      setStartTime("");
-      setEndTime("");
-      onClose("");
-    } else {
-      alert("일정과 날짜를 입력해주세요");
+  const handleSubmit = () => {
+    if (!title || !date || !startTime || !endTime) {
+      alert("모든 필드를 입력해주세요!");
+      return;
     }
-  }
+
+    const newEvent = {
+      id: Math.random(),
+      title,
+      start: new Date(`${date}T${startTime}`),
+      end: new Date(`${date}T${endTime}`),
+    };
+
+    onAddEvent(newEvent); // 부모 컴포넌트에 전달
+    setTitle("");
+    setDate("");
+    setStartTime("");
+    setEndTime("");
+  };
 
   return (
-    <div
-      className="modal-container"
-      onClick={(e) => {
-        if (e.target.className === "modal-container") {
-          onClose(); // 배경 클릭 시 모달 닫기
-        }
-      }}
-    >
+    <div className="modal-container" onClick={(e) => e.target.className === "modal-container" && onClose()}>
       <div className="modal-content">
         <h2>일정 추가</h2>
         <div>
-          <label>
-            일정 : <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-          </label>
-          <label>
-            날짜 : <input type="text" value={title} onChange={(e) => setDate(e.target.value)} />
-          </label>
-          <label>
-            시작시간 : <input type="text" value={title} onChange={(e) => setStartTime(e.target.value)} />
-          </label>
-          <label>
-            종료시간 : <input type="text" value={title} onChange={(e) => setEndTime(e.target.value)} />
-          </label>
+          <label>제목:</label>
+          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+          <label>날짜:</label>
+          <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
+          <label>시작 시간:</label>
+          <input type="time" value={startTime} onChange={(e) => setStartTime(e.target.value)} />
+          <label>종료 시간:</label>
+          <input type="time" value={endTime} onChange={(e) => setEndTime(e.target.value)} />
         </div>
         <div>
-          <button className="modal-add-btn" onClick={handleAddEvent}>
-            추가
-          </button>
-          <button className="modal-close-btn" onClick={onClose}>
-            닫기
-          </button>
+          <button onClick={handleSubmit}>저장</button>
+          <button onClick={onClose}>취소</button>
         </div>
       </div>
     </div>

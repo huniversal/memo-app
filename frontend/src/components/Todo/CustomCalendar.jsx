@@ -6,6 +6,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import "../Style/customcalendar.css";
 import TodoSidebar from "./TodoSidebar";
 import TodoToolbar from "./TodoToolbar";
+import TodoModal from "./TodoModal";
 
 moment.locale("ko"); // 한국어 로케일 설정
 const localizer = momentLocalizer(moment); // Localizer 설정
@@ -27,22 +28,31 @@ const initialEvents = [
 ];
 
 const CustomCalendar = () => {
-  const [showOffcanvas, setShowOffcanvas] = useState(false);
-  const [events, setEvents] = useState(initialEvents);
-  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [events, setEvents] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  const toggleOffcanvas = () => {
-    setShowOffcanvas(!showOffcanvas);
-    console.log("Sidebar visibility:", !showOffcanvas);
-  };
+  const handleAddEvent = (newEvent) => {
+    setEvents([...events, newEvent]);
+    setIsModalOpen(false);
+  }
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  }
 
   const daysInKorean = ["일", "월", "화", "수", "목", "금", "토"];
 
   return (
     <div className="calendar-container">
+      <TodoModal
+        isOpen={isModalOpen}
+        onClose={()=>setIsModalOpen(false)}
+        onAddEvent={handleAddEvent}
+      />
       <TodoSidebar
-        show={showOffcanvas}
-        onHide={toggleOffcanvas}
+        show={isSidebarOpen}
+        onHide={toggleSidebar}
+        events={events}
       />
       <Calendar
         localizer={localizer}
@@ -51,10 +61,8 @@ const CustomCalendar = () => {
           toolbar: (props) => (
             <TodoToolbar
               {...props}
-              onAddEvent={() => {
-                setSelectedEvent(null);
-                toggleOffcanvas();
-              }}
+              onAddEvent={() => setIsSidebarOpen(!isSidebarOpen)}
+                onToggleModal ={() => setIsModalOpen(true)}
             />
           ),
           month: {
