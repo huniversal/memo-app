@@ -40,11 +40,11 @@ const CustomCalendar = () => {
     });
     setIsModalOpen(false);
   };
-  
+
   const toggleSidebar = () => {
     setIsSidebarOpen((prev) => {
       const newState = !prev;
-      console.log("Sidebar state: ", newState); // 사이드바 상태 확인
+      console.log("Sidebar is now:", !isSidebarOpen); // 사이드바 상태 확인
       return newState;
     });
   };
