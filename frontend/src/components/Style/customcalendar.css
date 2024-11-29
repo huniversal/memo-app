@@ -74,11 +74,12 @@
 /* 날짜 셀 스타일 */
 .rbc-day-bg {
   background-color: #fff;
-  border: 0.8px solid #e0e0e0;
+  /* border: 0.8px solid #e0e0e0; */
+  border: 0.8px solid #fff;
 }
 
 .rbc-today {
-  background-color: #fffae6; /* 오늘 날짜 배경 강조 */
+  background-color: lightblue; /* 오늘 날짜 배경 강조 */
 }
 
 /* 이벤트 스타일 */
@@ -113,4 +114,12 @@
 .rbc-month-view {
   border-radius: 10px 10px 0 0;
   border-style: none;
+}
+
+.rbc-month-row {
+  border: 0.8px solid #fff;
+}
+
+.rbc-day-bg:nth-child(7), .rbc-day-bg:nth-child(6) {
+  background-color: transparent !important;
 }

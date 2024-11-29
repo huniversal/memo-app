@@ -11,17 +11,25 @@
   margin-left: auto; /* 오른쪽 정렬 */
 }
 
-.custom-toolbar-add-event-button {
+.custom-toolbar-add-event-button,
+.custom-toolbar-list-button {
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 50px;
   padding: 8px 15px;
   cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 10px;
 }
 
 .custom-toolbar-add-event-button:hover {
-  background-color: #0056b3;
+  background-color: #ffbf00;
+}
+
+.custom-toolbar-list-button:hover {
+  background-color: #ffbf00; 
 }
 
 /* 왼쪽 고정된 월/주 버튼 */
@@ -38,8 +46,8 @@
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 20px;
-  padding: 8px 16px;
+  border-radius: 50px;
+  padding: 5px 10px;
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
@@ -56,7 +64,7 @@
   align-items: center;
   gap: 20px; /* 버튼과 라벨 간 간격 */
   flex: 1; /* 가운데 요소를 확장하여 양쪽 공간 확보 */
-  margin-right: 100px;
+  margin-right: -10px;
 }
 
 /* 달 이동 버튼 스타일 */
@@ -67,6 +75,7 @@
   font-size: 20px;
   cursor: pointer;
   font-size: 18px;
+  background-color: white;
 }
 
 /* 월 표시 라벨 스타일 */
@@ -75,4 +84,8 @@
   font-weight: 700;
   color: #333;
   margin-top: 15px;
+}
+
+.event-button {
+  margin-left: 10px;
 }

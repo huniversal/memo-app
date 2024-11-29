@@ -41,6 +41,9 @@ const CustomCalendar = () => {
     setShowOffcanvas(false);
   };
 
+  // 요일을 한글로 표시하기 위한 배열
+  const daysInKorean = ["일", "월", "화", "수", "목", "금", "토"];
+
   return (
     <div className="calendar-container">
       <TodoSidebar
@@ -62,10 +65,24 @@ const CustomCalendar = () => {
               }}
             />
           ),
+          month: {
+            header: ({ date }) => (
+              <div style={{ textAlign: "center" }}>
+                {daysInKorean[moment(date).day()]}
+              </div>
+            ),
+          },
+          week: {
+            header: ({ date }) => (
+              <div style={{ textAlign: "center" }}>
+                {daysInKorean[moment(date).day()]}
+              </div>
+            ),
+          },
         }}
         formats={{
           dayFormat: (date, culture, localizer) =>
-            localizer.format(date, "ddd", culture), // 요일 전체 이름으로 설정
+            localizer.format(date, "ddd", culture), // "ddd"는 요일 약자 (일, 월, ...)로 설정
         }}
         startAccessor="start"
         endAccessor="end"
