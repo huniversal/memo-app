@@ -2,8 +2,11 @@ import React from "react";
 import "../Style/TodoSidebar.css";
 
 const TodoSidebar = ({ show, onHide, events }) => {
-  if (!show) return null;
-
+  if (!show) {
+    console.log("Sidebar is Hidden");
+    return null;
+  }
+  console.log("Sidebar is visible");
   return (
     <div className="Todo-sidebar">
       <div className="Todo-Sidebar-Content">
