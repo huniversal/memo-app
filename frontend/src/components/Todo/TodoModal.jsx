@@ -1,29 +1,26 @@
-import React, { useState } from 'react'
+import React from "react";
+import "../Style/todomodal.css";
 
-const TodoModal = () => {
-  const [title, setTitle] = useState('');
-  const [date, setDate] = useState('');
-  const [startTime, setStartTime] = useState('');
-  const [endTime, setEndTime] = useState('');
+const TodoModal = ({ isOpen, onClose, children }) => {
+  if (!isOpen) return null; // 모달이 열려 있지 않으면 아무것도 렌더링하지 않음
 
-  const handleSubmit = () => {
-    const newEvents = {
-      id : Math.random(),
-      title, 
-      start : moment(date).set({hour:startTime.split(':')[0], minute:startTime.split(':')[1]}).toDate(),
-      end : set({hour:endTime.split(':')[0], minute:endTime.split(':')[1]}).toDate(),
-    };
-    onAddEvent(newEvents);
-  }
   return (
-    <div className={`Todo-modal ${show ? 'show' : ''}`}>
-      <div className='Todo-modal-Content'>
-        <h3>일정 추가</h3>
-        <button className='close-modal' onClick={''}>닫기</button>
+    <div
+      className="modal-container"
+      onClick={(e) => {
+        if (e.target.className === "modal-container") {
+          onClose(); // 배경 클릭 시 모달 닫기
+        }
+      }}
+    >
+      <div className="modal-content">
+        {children} {/* 모달 내용 */}
+        <button className="modal-close-btn" onClick={onClose}>
+          닫기
+        </button>
       </div>
-      
     </div>
-  )
-}
+  );
+};
 
-export default TodoModal
+export default TodoModal;
