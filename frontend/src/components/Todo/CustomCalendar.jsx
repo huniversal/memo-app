@@ -33,13 +33,21 @@ const CustomCalendar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const handleAddEvent = (newEvent) => {
-    setEvents([...events, newEvent]);
+    setEvents((prevEvents) => {
+      const updatedEvents = [...prevEvents, newEvent];
+      console.log("Updated Events: ", updatedEvents); // 상태 업데이트 확인
+      return updatedEvents;
+    });
     setIsModalOpen(false);
-  }
+  };
+  
   const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  }
-
+    setIsSidebarOpen((prev) => {
+      const newState = !prev;
+      console.log("Sidebar state: ", newState); // 사이드바 상태 확인
+      return newState;
+    });
+  };
   const daysInKorean = ["일", "월", "화", "수", "목", "금", "토"];
 
   return (
@@ -61,8 +69,8 @@ const CustomCalendar = () => {
           toolbar: (props) => (
             <TodoToolbar
               {...props}
-              onAddEvent={() => setIsSidebarOpen(!isSidebarOpen)}
-                onToggleModal ={() => setIsModalOpen(true)}
+              onAddEvent={toggleSidebar}
+              onToggleModal ={() => setIsModalOpen(true)}
             />
           ),
           month: {

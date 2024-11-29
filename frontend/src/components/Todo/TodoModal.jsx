@@ -21,7 +21,7 @@ const TodoModal = ({ isOpen, onClose, onAddEvent }) => {
       start: new Date(`${date}T${startTime}`),
       end: new Date(`${date}T${endTime}`),
     };
-
+    console.log("New Event: ", newEvent);
     onAddEvent(newEvent); // 부모 컴포넌트에 전달
     setTitle("");
     setDate("");
