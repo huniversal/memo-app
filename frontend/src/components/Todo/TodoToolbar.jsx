@@ -123,16 +123,6 @@ const TodoToolbar = ({ onNavigate, label, onView, onAddEvent }) => {
 
   return (
     <div className="custom-toolbar">
-      {/* 왼쪽 월/주 버튼 */}
-      <div className="view-button">
-        <button onClick={setMonthView} className="custom-toolbar-view-button">
-          월
-        </button>
-        <button onClick={setWeekView} className="custom-toolbar-view-button">
-          주
-        </button>
-      </div>
-
       {/* 가운데 달 이동 버튼과 라벨 */}
       <div className="view-toolbar">
         <button onClick={goToBack} className="custom-toolbar-button">
@@ -147,13 +137,13 @@ const TodoToolbar = ({ onNavigate, label, onView, onAddEvent }) => {
       {/* 오른쪽 일정 추가 및 일정 보기 버튼 */}
       <div className="event-button">
         <button onClick={onAddEvent} className="custom-toolbar-add-event-button">
-          일정 추가
+        &#43;
         </button>
         <button
           onClick={() => setIsModalOpen(true)} // 모달 열기
           className="custom-toolbar-list-button"
         >
-          일정 보기
+          ☰
         </button>
       </div>
 

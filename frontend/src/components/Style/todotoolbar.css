@@ -7,64 +7,41 @@
   margin-top: -20px;
 }
 
+/* 왼쪽 고정된 일정 버튼들 */
 .custom-toolbar .event-button {
-  margin-left: auto; /* 오른쪽 정렬 */
+  margin-right: auto; /* 왼쪽 고정 */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px; /* 버튼 간 간격 */
 }
 
+/* 일정 추가 및 보기 버튼 스타일 */
 .custom-toolbar-add-event-button,
 .custom-toolbar-list-button {
-  background-color: #007bff;
-  color: white;
+  background-color: white;
+  color: #007bff;
   border: none;
   border-radius: 50px;
   padding: 8px 15px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 35px;
   font-weight: bold;
-  margin-left: 10px;
 }
 
-.custom-toolbar-add-event-button:hover {
-  background-color: #ffbf00;
+.custom-toolbar-list-button {
+  padding-bottom: 15px;
 }
 
-.custom-toolbar-list-button:hover {
-  background-color: #ffbf00; 
-}
-
-/* 왼쪽 고정된 월/주 버튼 */
-.view-button {
-  display: flex;
-  justify-content: flex-start; /* 왼쪽 정렬 */
-  align-items: center;
-  gap: 10px;
-  margin-right: 55px;
-}
-
-/* 월/주 버튼 스타일 */
-.custom-toolbar-view-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 50px;
-  padding: 5px 10px;
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.custom-toolbar-view-button:hover {
-  background-color: #ffbf00;
-}
-
-/* 가운데 정렬된 달 이동 버튼과 라벨 */
+/* 가운데 달 이동 버튼과 라벨 */
 .view-toolbar {
   display: flex;
   justify-content: center; /* 가운데 정렬 */
   align-items: center;
   gap: 20px; /* 버튼과 라벨 간 간격 */
   flex: 1; /* 가운데 요소를 확장하여 양쪽 공간 확보 */
-  margin-right: -10px;
+  margin-left: 120px;
+
 }
 
 /* 달 이동 버튼 스타일 */
@@ -74,7 +51,6 @@
   border-radius: 50px;
   font-size: 20px;
   cursor: pointer;
-  font-size: 18px;
   background-color: white;
 }
 
@@ -84,8 +60,4 @@
   font-weight: 700;
   color: #333;
   margin-top: 15px;
-}
-
-.event-button {
-  margin-left: 10px;
 }
