@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment";
-import "moment/locale/ko"; // Moment.js 한국어 로케일 불러오기
+import "moment/locale/ko"; 
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import "../Style/customcalendar.css";
@@ -36,12 +36,6 @@ const CustomCalendar = () => {
     console.log("Sidebar visibility:", !showOffcanvas);
   };
 
-  const handleAddEvent = (newEvent) => {
-    setEvents([...events, newEvent]);
-    setShowOffcanvas(false);
-  };
-
-  // 요일을 한글로 표시하기 위한 배열
   const daysInKorean = ["일", "월", "화", "수", "목", "금", "토"];
 
   return (
@@ -49,8 +43,6 @@ const CustomCalendar = () => {
       <TodoSidebar
         show={showOffcanvas}
         onHide={toggleOffcanvas}
-        onAddEvent={handleAddEvent}
-        selectedEvent={selectedEvent}
       />
       <Calendar
         localizer={localizer}
