@@ -8,7 +8,7 @@ const TodoSidebar = ({ show, onHide, events }) => {
     <div className={`Todo-sidebar ${show ? "show" : ""}`}>
       <div className="Todo-Sidebar-Content">
         <div className="Todo-Sidebar-header">
-          <h3>일정 리스트</h3>
+          <h2>Todo 리스트</h2>
           <button className="close-btn" onClick={onHide}>
             닫기
           </button>

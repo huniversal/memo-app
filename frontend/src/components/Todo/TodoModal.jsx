@@ -32,18 +32,17 @@ const TodoModal = ({ isOpen, onClose, onAddEvent }) => {
   return (
     <div className="modal-container" onClick={(e) => e.target.className === "modal-container" && onClose()}>
       <div className="modal-content">
-        <h2>일정 추가</h2>
-        <div>
-          <label>제목:</label>
-          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-          <label>날짜:</label>
+        <h1>일정 추가</h1>
+        <div className="modal-content-input">
+          <input type="text" placeholder="새로운 이벤트" value={title} onChange={(e) => setTitle(e.target.value)} />
+          <h3>날짜</h3>
           <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
-          <label>시작 시간:</label>
+          <h3>시작</h3>
           <input type="time" value={startTime} onChange={(e) => setStartTime(e.target.value)} />
-          <label>종료 시간:</label>
+          <h3>종료</h3>
           <input type="time" value={endTime} onChange={(e) => setEndTime(e.target.value)} />
         </div>
-        <div>
+        <div className="modal-btn">
           <button onClick={handleSubmit}>저장</button>
           <button onClick={onClose}>취소</button>
         </div>
