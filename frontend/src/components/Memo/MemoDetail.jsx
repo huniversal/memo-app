@@ -52,8 +52,11 @@ const MemoDetail = ({ memos, onDelete, onSave }) => {
             <h2 className="detail-title">{memo.title}</h2>
             <p className="detail-content">{memo.content}</p>
           </div>
-          <button onClick={() => setIsEditing(true)}>수정</button>
-          <button onClick={handleDelete}>삭제</button>
+          <div className="button-container">
+            <button onClick={() => setIsEditing(true)}>수정</button>
+            <button onClick={handleDelete}>삭제</button>
+          </div>
+
         </>
       )}
     </div>

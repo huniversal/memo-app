@@ -43,4 +43,16 @@
 
 .event-list li {
   margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.event-list li strong {
+  font-size: 20px; /* 타이틀의 폰트 크기 설정 */
+  color: #333; /* 타이틀 색상 */
+}
+
+.event-list li p {
+  margin-top: 5px; /* 타이틀과 내용 간격 */
+  font-size: 14px; /* 내용 폰트 크기 */
+  color: #666; /* 내용 색상 */
 }
