@@ -2,7 +2,6 @@ import "../Style/Editor.css";
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router";
 
-
 const Editor = ({ onSave }) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -28,7 +27,6 @@ const Editor = ({ onSave }) => {
       navigate(`/memo/${newMemoId}`); // 디테일 페이지로 이동
     }
   };
-
 
   return (
     <div className="Memo-Editor">

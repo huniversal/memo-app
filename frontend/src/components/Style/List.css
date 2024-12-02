@@ -1,8 +1,33 @@
 .memo-wrapper {
   overflow: auto;
-  margin-top: -20px;
+  margin-top: -30px;
 }
 
 .List > h2 {
   margin-left: 10px;
+}
+
+.List .list-header {
+  display: flex;
+  justify-content: space-between; /* 버튼과 제목을 양쪽 끝에 정렬하고 싶다면 사용 */
+  align-items: center; /* 수직 중앙 정렬 */
+  margin: 0 10px; /* 양쪽 여백 */
+}
+
+.List .write-btn {
+  background-color: #007bff; /* 원하는 버튼 스타일 */
+  border: 1px solid #ccc;
+  color: white;
+  border-radius: 7px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.write-btn:hover {
+  background-color: #0056b3; /* 버튼 hover 효과 */
+}
+
+.memo-wrapper {
+  overflow: auto;
+  margin-top: 10px;
 }
