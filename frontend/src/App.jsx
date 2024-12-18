@@ -92,18 +92,11 @@ const App = () => {
           <Sidebar memos={memos} onDelete={onDelete} />
           <main className="main">
             <Routes>
-              <Route
-                path="/"
-                element={<MemoPage memos={memos} onSave={onSave} />}
-              />
-              <Route
-                path="/memo/:id"
-                element={ <MemoDetail memos={memos} onDelete={onDelete} onSave={onSave} />
-                }
-              />
-              <Route path="/todo" element={<TodoPage />} />
-              <Route path="/mypage" element={<MyPage />} />
-              <Route path="*" element={<NotFound />} />
+              <Route path="/"         element={<MemoPage   memos={memos} onSave={onSave} />} />
+              <Route path="/memo/:id" element={<MemoDetail memos={memos} onDelete={onDelete} onSave={onSave} />} />
+              <Route path="/todo"     element={<TodoPage />} />
+              <Route path="/mypage"   element={<MyPage />} />
+              <Route path="*"         element={<NotFound />} />
             </Routes>
           </main>
         </div>

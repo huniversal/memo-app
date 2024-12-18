@@ -16,7 +16,7 @@
 
 .List .write-btn {
   background-color: #007bff; /* 원하는 버튼 스타일 */
-  border: 1px solid #ccc;
+  border: none;
   color: white;
   border-radius: 7px;
   padding: 5px 10px;

@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router';
 
 const List = ({ memos=[], onDelete }) => {
   const navigate = useNavigate();
-
   const handleWriteClick = () => {
     navigate('/');
   }
